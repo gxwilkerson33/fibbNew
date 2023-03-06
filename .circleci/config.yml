@@ -26,16 +26,16 @@ jobs:
           version: 20.10.14
       - run:
           name: "build docker client image"
-          command: "docker build -t gxwilkerson/multi-client -f ./client/ ."
+          command: "docker build -t gxwilkerson/multi-client -f ./client"
       - run:
           name: "build docker nginx image"
-          command: "docker build -t gxwilkerson/multi-nginx -f ./nginx/ ."
+          command: "docker build -t gxwilkerson/multi-nginx -f ./nginx"
       - run:
           name: "build docker server image"
-          command: "docker build -t gxwilkerson/multi-server -f ./server/ ."
+          command: "docker build -t gxwilkerson/multi-server -f ./server"
       - run:
           name: "build worker image"
-          command: "docker build -t gxwilkerson/multi-worker -f ./worker/ ."
+          command: "docker build -t gxwilkerson/multi-worker -f ./worker"
       
 
 # Invoke jobs via workflows
