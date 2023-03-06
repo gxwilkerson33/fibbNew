@@ -26,17 +26,34 @@ jobs:
           version: 20.10.14
       - run:
           name: "build docker client image"
-          command: "docker build -t gxwilkerson/multi-client ./client "
+          command: "docker build -t gxwilkerson33/multi-client ./client "
       - run:
           name: "build docker nginx image"
-          command: "docker build -t gxwilkerson/multi-nginx ./nginx "
+          command: "docker build -t gxwilkerson33/multi-nginx ./nginx "
       - run:
           name: "build docker server image"
-          command: "docker build -t gxwilkerson/multi-server ./server "
+          command: "docker build -t gxwilkerson33/multi-server ./server "
       - run:
           name: "build worker image"
-          command: "docker build -t gxwilkerson/multi-worker ./worker "
-      
+          command: "docker build -t gxwilkerson33/multi-worker ./worker "
+      - run:
+          name: "Log in to Docker CLI"
+          command: "echo $DOCKER_PASSWORD | DOCKER LOGIN -U $DOCKER_ID --password=stdin"
+      - run:
+          name: "Docker push"
+          command: docker push gxwilkerson33/multi-client
+      - run:
+          name: "Docker push"
+          command: docker push gxwilkerson33/multi-nginx
+      - run:
+          name: "Docker push"
+          command: docker push gxwilkerson33/multi-server
+      - run:
+          name: "Docker push"
+          command: docker push gxwilkerson33/multi-worker
+
+
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
