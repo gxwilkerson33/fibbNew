@@ -26,10 +26,10 @@ jobs:
           version: 20.10.14
       - run:
           name: "build docker image"
-          command: "docker build -t gxwilkerson/docker-react -f Dockerfile.dev ."
+          command: "docker build -t gxwilkerson/react-test -f ../client/Dockerfile.dev ."
       - run:
           name: "run tests"
-          command: "docker run -e CI=true gxwilkerson/docker-react npm run test -- --coverage"
+          command: "docker run -e CI=true gxwilkerson/react-test npm run test -- --coverage"
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
