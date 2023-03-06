@@ -44,7 +44,7 @@ jobs:
       #     command: "sudo su"
       - run:
           name: "Log in to Docker CLI"
-          command: "echo \"Table514!!\" | docker login --username \"$DOCKER_ID\" --password-stdin"
+          command: "docker login --username \"gxwilkerson33\" --password \"Table514!!\""
       - run:
           name: "Docker push"
           command: docker push gxwilkerson33/multi-client
