@@ -38,7 +38,7 @@ jobs:
           command: "docker build -t gxwilkerson33/multi-worker ./worker "
       - run:
           name: "Log in to Docker CLI"
-          command: "echo $DOCKER_PASSWORD | DOCKER LOGIN -U $DOCKER_ID --password=stdin"
+          command: "echo $DOCKER_PASSWORD | docker login -u $DOCKER_ID --password=stdin"
       - run:
           name: "Docker push"
           command: docker push gxwilkerson33/multi-client
