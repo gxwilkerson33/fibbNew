@@ -44,7 +44,7 @@ jobs:
           command: "sudo su"
       - run:
           name: "Log in to Docker CLI"
-          command: "echo Table514!! | docker login --username $DOCKER_ID --password=stdin"
+          command: "echo \"Table514!!\" | docker login --username \"$DOCKER_ID\" --password-stdin"
       - run:
           name: "Docker push"
           command: docker push gxwilkerson33/multi-client
@@ -64,9 +64,6 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
   build-workflow:
     jobs:
       - build
