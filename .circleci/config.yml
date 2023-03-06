@@ -40,6 +40,9 @@ jobs:
           name: "echo env variables"
           command: "echo $DOCKER_ID "
       - run:
+          name: "sudo SU"
+          command: "sudo su"
+      - run:
           name: "Log in to Docker CLI"
           command: "echo Table514!! | docker login --username $DOCKER_ID --password=stdin"
       - run:
