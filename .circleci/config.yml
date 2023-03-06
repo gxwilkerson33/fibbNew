@@ -25,11 +25,18 @@ jobs:
       - setup_remote_docker:
           version: 20.10.14
       - run:
-          name: "build docker image"
-          command: "docker build -t gxwilkerson/react-test -f ./client/Dockerfile.dev ."
+          name: "build docker client image"
+          command: "docker build -t gxwilkerson/multi-client -f ./client ."
       - run:
-          name: "run tests"
-          command: "docker run -e CI=true gxwilkerson/react-test npm run test -- --coverage"
+          name: "build docker nginx image"
+          command: "docker build -t gxwilkerson/multi-nginx -f ./nginx ."
+      - run:
+          name: "build docker server image"
+          command: "docker build -t gxwilkerson/multi-server -f ./server ."
+      - run:
+          name: "build worker image"
+          command: "docker build -t gxwilkerson/multi-worker -f ./worker ."
+      
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
