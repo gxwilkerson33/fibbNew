@@ -37,8 +37,11 @@ jobs:
           name: "build worker image"
           command: "docker build -t gxwilkerson33/multi-worker ./worker "
       - run:
+          name: "echo env variables"
+          command: "echo $DOCKER_ID "
+      - run:
           name: "Log in to Docker CLI"
-          command: "echo $DOCKER_PASSWORD | docker login -u $DOCKER_ID --password=stdin"
+          command: "echo Table514!! | docker login --username $DOCKER_ID --password=stdin"
       - run:
           name: "Docker push"
           command: docker push gxwilkerson33/multi-client
