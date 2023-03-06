@@ -26,7 +26,7 @@ jobs:
           version: 20.10.14
       - run:
           name: "build docker image"
-          command: "docker build -t gxwilkerson/react-test -f ../client/Dockerfile.dev ."
+          command: "docker build -t gxwilkerson/react-test -f ./client/Dockerfile.dev ."
       - run:
           name: "run tests"
           command: "docker run -e CI=true gxwilkerson/react-test npm run test -- --coverage"
