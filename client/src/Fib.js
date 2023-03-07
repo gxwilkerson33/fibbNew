@@ -36,9 +36,9 @@ class Fib extends Component {
 
   renderSeenIndexes() { 
     try{
-       x = this.state.seenIndexes?.map(({ number }) => number).join(', ');
+       x = this.state.seenIndexes.map(({ number }) => number).join(', ');
        return x
-    }catch{
+    }catch (err){
       console.log("failed")
       return " "
     }
