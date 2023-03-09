@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: client-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       component: web
@@ -13,8 +13,11 @@ spec:
         component: web
     spec:
       containers:
-      - name: client-deployment
-        image: gxwilkerson33/multi-client
-        ports:
-        - containerPort: 3000
-
+        - name: client-deployment
+          image: gxwilkerson33/multi-client
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000

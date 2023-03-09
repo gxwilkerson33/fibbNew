@@ -47,9 +47,6 @@ jobs:
           command: docker push gxwilkerson33/multi-client
       - run:
           name: "Docker push"
-          command: docker push gxwilkerson33/multi-nginx
-      - run:
-          name: "Docker push"
           command: docker push gxwilkerson33/multi-server
       - run:
           name: "Docker push"
