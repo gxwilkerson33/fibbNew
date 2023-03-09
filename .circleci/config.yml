@@ -28,9 +28,6 @@ jobs:
           name: "build docker client image"
           command: "docker build -t gxwilkerson33/multi-client ./client "
       - run:
-          name: "build docker nginx image"
-          command: "docker build -t gxwilkerson33/multi-nginx ./nginx "
-      - run:
           name: "build docker server image"
           command: "docker build -t gxwilkerson33/multi-server ./server "
       - run:
