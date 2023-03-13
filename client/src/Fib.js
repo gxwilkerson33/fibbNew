@@ -35,6 +35,7 @@ class Fib extends Component {
   };
 
   renderSeenIndexes() {
+    return "node problem, but hello from EKS from terraform"
     return this.state.seenIndexes.map(({ number }) => number).join(', ');
   }
 
